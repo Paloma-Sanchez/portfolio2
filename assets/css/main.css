@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'KannadaFake';
+    src: url('./fonts/Alb/AlbSans-Regular.otf') format('opentype');
+  }
