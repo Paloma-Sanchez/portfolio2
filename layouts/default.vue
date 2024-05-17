@@ -11,7 +11,7 @@
             class="relative -z-10"
         >
             <landing-circle-logo-ensemble
-                class="w-[820px] h-[820px] border-2 border-[#BEBEBE] rounded-full absolute -top-[544px] left-3/4  animate-rotateDown -rotate-[45deg]  "
+                class="w-[820px] h-[820px] border-2 border-[#BEBEBE] rounded-full absolute -top-[544px] left-3/4  animate-rotateDown -rotate-[65deg]  "
             />
         </div>
     </div>
