@@ -6,7 +6,7 @@
 
             class="cursor-pointer  "
         >
-            About
+            {{ $t("navbar.cat1")}}
         </NuxtLink>
         <p
             class=" text-lg "
@@ -15,7 +15,7 @@
             to="/projects"
             class="cursor-pointer"
         >
-            Projects
+            {{ $t("navbar.cat2")}}
         </NuxtLink>
         <p
             class=" text-lg "
@@ -24,7 +24,7 @@
             to="/contact"
             class="cursor-pointer"
         >
-            Contact
+            {{ $t("navbar.cat3")}}
         </NuxtLink>
     </div>
 </template>

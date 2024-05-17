@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr:false,
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   postcss: {
@@ -13,7 +14,9 @@ export default defineNuxtConfig({
     "nuxt-svgo",
     "@nuxtjs/color-mode",
     "@nuxtjs/google-fonts",
-    "nuxt-icon"
+    "nuxt-icon",
+    "@nuxtjs/i18n",
+    "@nuxtjs/i18n"
   ],
   googleFonts: {
     families: {
@@ -25,5 +28,6 @@ export default defineNuxtConfig({
     //preference: 'system', // default value of $colorMode.preference
     //fallback: 'light',
     classSuffix: ''
-  }
+  },
+
 })

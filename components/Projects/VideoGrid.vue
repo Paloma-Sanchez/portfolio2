@@ -37,16 +37,10 @@
 <script setup lang="ts">
 import { twJoin, twMerge } from 'tailwind-merge';
 import {projects} from '../../projects_db.json';
-console.log(projects)
 
-const gridProjectElementClass = (index:number):string => {
-    const colStartSecond = (index+1)%2 !==  0 ? 'col-start-2' : ''
-    const colStartFirst = (index+1)%2 ===  0 ? 'col-start-1' : ''
-    const row = 'row-end-' + (index+2).toString();
-
-    return twMerge(twJoin(colStartSecond, colStartFirst, row))
-
-}
+definePageMeta({
+  layout: 'projects'
+});
 
 const gridNumberElementClass = (index:number):string => {
     const colStartSecond = (index+1)%2 !==  0 ? 'col-start-1' : ''
@@ -55,5 +49,14 @@ const gridNumberElementClass = (index:number):string => {
 
     return twMerge(twJoin(colStartSecond, colStartFirst, row))
 
-}
+};
+
+const gridProjectElementClass = (index:number):string => {
+    const colStartSecond = (index+1)%2 !==  0 ? 'col-start-2' : ''
+    const colStartFirst = (index+1)%2 ===  0 ? 'col-start-1' : ''
+    const row = 'row-end-' + (index+2).toString();
+
+    return twMerge(twJoin(colStartSecond, colStartFirst, row))
+
+};
 </script>

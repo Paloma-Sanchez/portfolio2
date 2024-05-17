@@ -5,11 +5,11 @@
         <p
             class="font-Archivo text-8xl text-[#3B4856] dark:text-white mt-[240px] "
         >
-            Let's work 
+            {{ $t("contact.title")}}
             <span
                 class="text-[#317BCB] dark:text-[#69B7FF]"
             > 
-                together
+            {{ $t("contact.highlight")}}
             </span>
             !
         </p>

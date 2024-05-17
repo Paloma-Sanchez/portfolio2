@@ -3,7 +3,7 @@
     class="overflow-hidden "
     :class="[
       {
-        'bg-[#DCECFF]': $colorMode.preference === 'light',
+        'bg-[#DCECFF]': $colorMode.preference === 'light' && path !== '/projects',
         'bg-black': $colorMode.preference === 'dark'
       }
     ]"
@@ -15,6 +15,12 @@
   
 </template>
 
-<script setup>
-
+<script setup lang="ts">
+    const path = computed(() => {
+        const {fullPath} = useRoute();
+        return fullPath
+    }) 
+    watch(path, () => {
+      console.log('path', path)
+    })
 </script>

@@ -1,6 +1,6 @@
 <template>
 <main 
-    class="overflow-hidden "
+    class=" "
 >
 
     <div
@@ -9,7 +9,7 @@
         
     </div>
     <div
-        class="w-[363px] h-[363px] rounded-full bg-white/95 dark:bg-[#E3F0FF] overflow-hidden ml-[37%] mt-20 pr-7"
+        class="w-[363px] h-[363px] rounded-full bg-white/95 dark:bg-[#E3F0FF] overflow-hidden ml-[37%] mt-20 pr-7 animate-slidePictureUp "
     >
         <img 
             class="mt-6 ml-8"
@@ -18,7 +18,7 @@
         />
     </div>
     <div
-        class="relative "
+        class="relative animate-slideUp opacity-0"
     >
         <landing-title-text
             class="absolute right-1/4 -top-48 "
@@ -26,12 +26,12 @@
     </div>
     
     <p
-        class="font-kannadaFake text-transform: uppercase text-[140px] text-center text-[#1E1E1E] dark:text-[#E3F0FF] mb-24 -mt-10"
+        class="font-kannadaFake text-transform: uppercase text-[140px] text-center text-[#1E1E1E] dark:text-[#E3F0FF] mb-24 -mt-10 animate-slideUp opacity-0"
     >
         paloma sanchez
     </p>
     <p
-        class="text-center text-[#1E1E1E] dark:text-[#E3F0FF] font-Almarai"
+        class="text-center text-[#1E1E1E] dark:text-[#E3F0FF] font-Almarai  animate-slideMailUp opacity-0"
     >
         karenpaloma.sanchez@gmail.com
     </p>

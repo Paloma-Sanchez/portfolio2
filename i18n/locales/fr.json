@@ -1,0 +1,29 @@
+{
+    "navbar":{
+        "cat1": "A propos",
+        "cat2": "Projets",
+        "cat3": "Contacter"
+    },
+    "landing":{
+        "title1": "Développeuse",
+        "title2": "Front-End",
+        "title3": "Freelance",
+        "availability": "disponible pour missions en freelance"
+    },
+    "about":{
+        "title": "A propos",
+        "p0": "Je suis une développeuse web Front-End de Nantes, France.",
+        "p1": "En 2016 j'ai obtenu mon diplôme d'ingénieure en Mécanique et Conception de l'Institut National de Sciences Appliquées (INSA) de Lyon.",
+        "p2": "Après 6 ans de travail dans l'industrie dans les secteurs du luxe et de l'automobile, j'ai decidé de suivre ma passion et de devenir devéloppeuse web", 
+        "p3": "Ainsi, après avoir fini le cours \"Front-End Development\" de Codecademy et plusieurs mois de pratique sur de divers projets, j'ai commencé ma carrière en Freelance en Decembre 2023."
+    },
+    "projects":{
+        "title": "Projets"
+    },
+    "contact":{
+        "title": "Travaillons",
+        "highlight": "ensemble",
+        "p": "On travaille ensemble sur un projet?"
+    }
+
+}

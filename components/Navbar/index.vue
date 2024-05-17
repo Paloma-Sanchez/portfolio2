@@ -14,7 +14,7 @@
         <div
             class="flex items-center"
         >
-            <p>EN</p>
+            <navbar-switch-language/>
             <navbar-dark-mode/>
         </div>     
     </div>
