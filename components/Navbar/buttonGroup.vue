@@ -1,27 +1,30 @@
 <template>
     <div
-        class="flex items-center justify-between h-min w-[540px] text-[#1E1E1E] dark:text-[#E3F0FF]"
+        class="flex items-center justify-between h-min w-[540px] text-[#1E1E1E] dark:text-[#E3F0FF] font-Almarai text-xl font-light"
     >
-        <button
-            class="  text-xl font-light font-Almarai"
+        <NuxtLink
+
+            class="cursor-pointer  "
         >
             About
-        </button>
+        </NuxtLink>
         <p
-            class=" text-lg font-light font-Almarai"
+            class=" text-lg "
         > / </p>
-        <button
-            class=" text-xl font-light font-Almarai"
+        <NuxtLink
+            to="/projects"
+            class="cursor-pointer"
         >
             Projects
-        </button>
+        </NuxtLink>
         <p
-            class=" text-lg font-light font-Almarai"
+            class=" text-lg "
         > / </p>
-        <button
-            class=" text-xl font-light font-Almarai"
+        <NuxtLink
+            to="/contact"
+            class="cursor-pointer"
         >
             Contact
-        </button>
+        </NuxtLink>
     </div>
 </template>

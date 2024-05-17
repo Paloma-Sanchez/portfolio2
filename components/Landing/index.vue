@@ -39,3 +39,12 @@
 </template>
 <script setup lang="ts">
 </script>
+<style >
+    .nuxt-icon--fill {
+        fill: inherit;
+    }
+    .nuxt-icon--fill * {
+        fill: inherit;
+
+    }
+</style>

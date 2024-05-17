@@ -1,18 +1,16 @@
 <template>
-    <div>
-        <p
-            class="text-[#2F399E] dark:text-white text-lg font-light font-Almarai"
-        >
+    <div
+        class="text-lg font-light font-Almarai text-[#2F399E] dark:text-white" 
+    >
+        <p>
             Freelance 
         </p>
         <p
-            class="text-[#2F399E] dark:text-white  text-lg font-light font-Almarai ml-12"
+            class=" ml-12"
         >
             Frontend 
         </p>
-        <p
-            class="text-[#2F399E] dark:text-white  text-lg font-light font-Almarai"
-        >
+        <p>
             Developper
         </p>
     </div>

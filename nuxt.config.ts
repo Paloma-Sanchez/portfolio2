@@ -17,7 +17,8 @@ export default defineNuxtConfig({
   ],
   googleFonts: {
     families: {
-      Almarai: true,
+      Almarai: [300, 400, 700, 800],
+      Archivo: '100..800'
     }
   },
   colorMode: {

@@ -12,6 +12,7 @@
   "dependencies": {
     "nuxt": "^3.11.2",
     "nuxt-svgo": "^4.0.1",
+    "tailwind-merge": "^2.3.0",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"
   },
