@@ -22,7 +22,7 @@ export default {
           '50%': { transform: 'rotate(3deg)' },
         },
         rotateDown: {
-          '0%': { transform: 'rotate(-45deg)' },
+          '0%': { transform: 'rotate(-65deg)' },
           '100%': { transform: 'rotate(0deg)' },
         },
         slideUp: {
