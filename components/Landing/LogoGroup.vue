@@ -4,34 +4,36 @@
         :class="flexClass"
     >
         <div
-            class="relative"
+            class="relative animate-firstDot opacity-0"
         >
             <div
+                v-if="iconsSize==='32px'"
                 class="rounded-full w-8 h-8 bg-white dark:bg-[#1E1E1E] absolute -z-10"
             ></div>
             <Icon
                 name="simple-icons:github"
+                :class="firstLogo"
                 :color="isDark? 'white':'#1E1E1E'"
-                :width="iconsSize?iconsSize:''"
-                :height="iconsSize?iconsSize:''"
+                :width="iconsSize"
+                :height="iconsSize"
             />
         </div>
 
         <Icon
             name="ph:medium-logo-fill"
             :color="isDark? '#1E1E1E' : 'white'"
-            class="bg-[#1E1E1E]  dark:bg-[#E3F0FF] rounded-sm"
+            class="bg-[#1E1E1E]  dark:bg-[#E3F0FF] opacity-0 animate-secondDot"
             :class="secondLogo"
-            :width="iconsSize?iconsSize:''"
-            :height="iconsSize?iconsSize:''"
+            :width="iconsSize"
+            :height="iconsSize"
         />
         <Icon
             name="fa6-brands:linkedin"
-            color="#1E1E1E dark:white"
-            class="bg-white  dark:bg-[#E3F0FF] rounded-sm"
+            color="#1E1E1E dark:white "
+            class="bg-white  dark:bg-[#E3F0FF] opacity-0 animate-thirdDot"
             :class="thirdLogo"
-            :width="iconsSize?iconsSize:''"
-            :height="iconsSize?iconsSize:''"
+            :width="iconsSize"
+            :height="iconsSize"
         />
     </div>
 
@@ -39,6 +41,13 @@
 <script setup lang="ts">
 const colorMode = useColorMode();
 const props = defineProps({
+    animate: {
+        type:Boolean,
+        default:false
+    },
+    firstLogo: {
+        type:String
+    },
     flexClass: {
         type:String
     },

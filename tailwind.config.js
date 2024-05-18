@@ -35,6 +35,30 @@ export default {
             opacity: 1
           }
         },
+        rotatingDotIntro: {
+          '0%': {
+            transform: 'translate3d(-10px, -50px, 10px)',
+            opacity: 0
+          },
+
+          '75%': {
+            transform: 'translate3d(0px, 5px, 10px)',
+            opacity: 0.75
+          },
+
+          '100%': {
+            transform: 'translate3d(0,0,0)',
+            opacity: 1
+          }
+        },
+        appear: {
+          '0%': {
+            opacity: 0
+          },
+          '100%': {
+            opacity: 1
+          }
+        }
         
       },
       animation: {
@@ -42,7 +66,12 @@ export default {
         slideUp: 'slideUp 400ms  ease-in-out 600ms forwards',
         slidePictureUp: 'slideUp 400ms ease-in-out',
         slideMailUp: 'slideUp 400ms  ease-in-out 800ms forwards',
-        rotateDown: 'rotateDown 300ms linear 1100ms forwards'
+        slideContactUp: 'slideUp 400ms  ease-in-out 900ms forwards',
+        rotateDown: 'rotateDown 300ms linear 1100ms forwards',
+        firstDot:'rotatingDotIntro 300ms linear 500ms forwards',
+        secondDot:'rotatingDotIntro 300ms linear 650ms forwards',
+        thirdDot:'rotatingDotIntro 300ms linear 800ms forwards',
+        appear:'appear 700ms linear forwards'
 
       },
     },
