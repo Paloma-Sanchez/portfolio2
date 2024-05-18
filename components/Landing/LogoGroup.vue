@@ -3,21 +3,16 @@
         class="flex "
         :class="flexClass"
     >
-        <div
-            class="relative animate-firstDot opacity-0"
-        >
-            <div
-                v-if="iconsSize==='32px'"
-                class="rounded-full w-8 h-8 bg-white dark:bg-[#1E1E1E] absolute -z-10"
-            ></div>
+
             <Icon
                 name="simple-icons:github"
+                class="animate-firstDot opacity-0"
                 :class="firstLogo"
                 :color="isDark? 'white':'#1E1E1E'"
                 :width="iconsSize"
                 :height="iconsSize"
             />
-        </div>
+
 
         <Icon
             name="ph:medium-logo-fill"

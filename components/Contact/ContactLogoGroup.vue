@@ -1,10 +1,10 @@
 <template>
     <landing-logo-group
-        iconsSize="24px"
-        flex-class="items-center w-24 justify-between"
-        first-logo="bg-white rounded-full"
+        iconsSize="32px"
+        flex-class="items-center w-40 justify-between"
+        first-logo="rounded-full"
         second-logo="rounded-full"
-        third-logo="rounded-full"
+        third-logo="bg-transparent rounded-full"
         :animate="true"
     />
     <div
