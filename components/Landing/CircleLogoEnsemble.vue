@@ -5,6 +5,8 @@
         ></div>
         <landing-logo-group
             class="relative -top-44  left-28"
+            secondLogo="mt-16 ml-14"
+            thirdLogo="mt-28 ml-16"
         />
     </div>
 </template>

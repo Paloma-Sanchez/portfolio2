@@ -1,6 +1,7 @@
 <template>
     <div
-        class="flex flex-row"
+        class="flex "
+        :class="flexClass"
     >
         <div
             class="relative"
@@ -17,18 +18,31 @@
         <Icon
             name="ph:medium-logo-fill"
             :color="isDark? '#1E1E1E' : 'white'"
-            class="bg-[#1E1E1E] mt-16 ml-14  dark:bg-[#E3F0FF] rounded-sm"
+            class="bg-[#1E1E1E]  dark:bg-[#E3F0FF] rounded-sm"
+            :class="secondLogo"
         />
         <Icon
             name="fa6-brands:linkedin"
             color="#1E1E1E dark:white"
-            class="bg-white mt-28 ml-16 dark:bg-[#E3F0FF] rounded-sm"
+            class="bg-white  dark:bg-[#E3F0FF] rounded-sm"
+            :class="thirdLogo"
         />
     </div>
 
 </template>
 <script setup lang="ts">
 const colorMode = useColorMode();
+const props = defineProps({
+    flexClass: {
+        type:String
+    },
+    secondLogo:{
+        type:String
+    },
+    thirdLogo:{
+        type:String
+    }
+})
 
 const isDark = computed({
   get () {
