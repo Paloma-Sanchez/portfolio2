@@ -12,6 +12,8 @@
             <Icon
                 name="simple-icons:github"
                 :color="isDark? 'white':'#1E1E1E'"
+                :width="iconsSize?iconsSize:''"
+                :height="iconsSize?iconsSize:''"
             />
         </div>
 
@@ -20,12 +22,16 @@
             :color="isDark? '#1E1E1E' : 'white'"
             class="bg-[#1E1E1E]  dark:bg-[#E3F0FF] rounded-sm"
             :class="secondLogo"
+            :width="iconsSize?iconsSize:''"
+            :height="iconsSize?iconsSize:''"
         />
         <Icon
             name="fa6-brands:linkedin"
             color="#1E1E1E dark:white"
             class="bg-white  dark:bg-[#E3F0FF] rounded-sm"
             :class="thirdLogo"
+            :width="iconsSize?iconsSize:''"
+            :height="iconsSize?iconsSize:''"
         />
     </div>
 
@@ -38,6 +44,10 @@ const props = defineProps({
     },
     secondLogo:{
         type:String
+    },
+    iconsSize:{
+        type:String,
+        default:'32px'
     },
     thirdLogo:{
         type:String
