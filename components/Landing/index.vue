@@ -26,7 +26,7 @@
     </div>
     
     <p
-        class="font-kannadaFake text-transform: uppercase text-6xl sm:text-[140px] text-center text-[#1E1E1E] dark:text-[#E3F0FF] mb-24 sm:-mt-10 animate-slideUp opacity-0"
+        class="font-kannadaFake text-transform: uppercase text-6xl sm:text-[140px] text-center text-[#1E1E1E] dark:text-[#E3F0FF] mb-24 mt-10 sm:-mt-10 animate-slideUp opacity-0"
     >
         paloma sanchez
     </p>

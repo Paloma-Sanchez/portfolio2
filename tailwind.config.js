@@ -10,7 +10,11 @@ export default {
     "./error.vue",
   ],
   theme: {
+    
     extend: {
+      screens:{
+        'desktop': '1350px'
+      },
       fontFamily: {
         'kannadaFake': ['KannadaFake'],
         'Almarai':['Almarai'],
@@ -21,9 +25,17 @@ export default {
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%': { transform: 'rotate(3deg)' },
         },
-        rotateDown: {
+        rotate65Up0: {
           '0%': { transform: 'rotate(-65deg)' },
           '100%': { transform: 'rotate(0deg)' },
+        },
+        rotate65Up5: {
+          '0%': { transform: 'rotate(-65deg)' },
+          '100%': { transform: 'rotate(5deg)' },
+        },
+        rotate65Up15: {
+          '0%': { transform: 'rotate(-65deg)' },
+          '100%': { transform: 'rotate(15deg)' },
         },
         slideUp: {
           '0%': {
@@ -67,7 +79,9 @@ export default {
         slidePictureUp: 'slideUp 400ms ease-in-out',
         slideMailUp: 'slideUp 400ms  ease-in-out 800ms forwards',
         slideContactUp: 'slideUp 400ms  ease-in-out 900ms forwards',
-        rotateDown: 'rotateDown 300ms linear 1100ms forwards',
+        rotate65Up0: 'rotate65Up0 300ms linear 1100ms forwards',
+        rotate65Up5: 'rotate65Up5 300ms linear 1100ms forwards',
+        rotate65Up15: 'rotate65Up15 300ms linear 1100ms forwards',
         firstDot:'rotatingDotIntro 300ms linear 500ms forwards',
         secondDot:'rotatingDotIntro 300ms linear 650ms forwards',
         thirdDot:'rotatingDotIntro 300ms linear 800ms forwards',
