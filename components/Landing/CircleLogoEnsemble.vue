@@ -5,9 +5,21 @@
         ></div>
         <landing-logo-group
             class="relative -top-44  left-28"
-            firstLogo="bg-white rounded-full"
+            :firstLogo="isDark? 'rounded-full': 'bg-white rounded-full'"
             secondLogo="mt-16 ml-14 rounded-sm"
             thirdLogo="mt-28 ml-16 rounded-sm"
         />
     </div>
 </template>
+<script setup lang="ts">
+const colorMode = useColorMode();
+
+const isDark = computed({
+  get () {
+    return colorMode.value === 'dark'
+  },
+  set () {
+    colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+  }
+  });
+</script>

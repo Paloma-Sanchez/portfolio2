@@ -31,4 +31,7 @@ import Logo from '../../assets/svg/logo.svg'
         fill: inherit;
 
     }
+    .router-link-exact-active {
+        font-weight: 700;
+    }
 </style>
