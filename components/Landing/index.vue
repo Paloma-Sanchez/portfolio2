@@ -21,12 +21,12 @@
         class="relative animate-slideUp opacity-0"
     >
         <landing-title-text
-            class="absolute right-1/4 -top-48 "
+            class="absolute sm:right-[60%] desktop:right-1/4 sm:-top-[350px]   desktop:-top-48 hidden sm:block"
         />
     </div>
     
     <p
-        class="font-kannadaFake text-transform: uppercase text-6xl sm:text-[140px] text-center text-[#1E1E1E] dark:text-[#E3F0FF] mb-16  sm:mb-24 mt-10 sm:-mt-10 animate-slideUp opacity-0"
+        class="font-kannadaFake text-transform: uppercase text-6xl sm:text-[140px] text-center text-[#1E1E1E] dark:text-[#E3F0FF] mb-12  sm:mb-24 mt-10 sm:-mt-10 animate-slideUp opacity-0 mx-4"
     >
         paloma sanchez
     </p>
@@ -34,6 +34,11 @@
         class="text-center text-[#1E1E1E] dark:text-[#E3F0FF] font-Almarai  animate-slideMailUp opacity-0"
     >
         karenpaloma.sanchez@gmail.com
+    </p>
+    <p
+        class=" block sm:hidden ext-lg font-light font-Almarai text-[#2F399E] dark:text-white text-center mt-12"
+    >
+        Feelance Frontend Developper
     </p>
 </main>
 </template>
