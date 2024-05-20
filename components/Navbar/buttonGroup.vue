@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex items-center justify-between h-min w-[540px] text-[#1E1E1E] dark:text-[#E3F0FF] font-Almarai text-xl font-light"
+        class="hidden sm:flex items-center justify-between h-min w-[270px] md:w-[540px] text-[#1E1E1E] dark:text-[#E3F0FF] font-Almarai text-xl font-light"
     >
         <NuxtLink
 

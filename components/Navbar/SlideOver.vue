@@ -1,18 +1,35 @@
 <template>
-      <HDialog :class="[ui.wrapper, { 'justify-end': side === 'right' }]" v-bind="attrs" @close="close">
-        <TransitionChild v-if="overlay" as="template" :appear="appear" v-bind="ui.overlay.transition">
-          <div :class="[ui.overlay.base, ui.overlay.background]" />
+      <HDialog 
+        class="fixed inset-0 flex z-50"
+        :class="[
+            {
+                'justify-end': side === 'right' 
+            }
+        ]" 
+        @close="closeFunction"
+      >
+        <TransitionChild 
+            v-if="overlay" 
+            as="template" 
+            :appear="appear" 
+        >
+          <div class="fixed inset-0 transition-opacity bg-gray-200/75 dark:bg-gray-800/75" />
         </TransitionChild>
   
-        <TransitionChild as="template" :appear="appear" v-bind="transitionClass">
-          <HDialogPanel :class="[ui.base, ui.width, ui.background, ui.ring, ui.padding]">
+        <TransitionChild 
+            as="template" 
+            :appear="appear" 
+            v-bind="transitionClass"
+        >
+          <HDialogPanel 
+            class="relative flex-1 flex flex-col w-full focus:outline-none max-w-md bg-white dark:bg-gray-900">
             <slot />
           </HDialogPanel>
         </TransitionChild>
       </HDialog>
   </template>
   
-  <script lang="ts">
+  <script setup lang="ts">
     const props =defineProps({
       modelValue: {
         type: Boolean as PropType<boolean>,
@@ -43,38 +60,34 @@
         type: [String, Object, Array] as PropType<any>,
         default: () => ''
       },
-      ui: {
-        type: Object as PropType<Partial<typeof config> & { strategy?: Strategy }>,
-        default: () => ({})
-      }
-    }),
+    });
     
-    const emit = defineEmits(['update:modelValue', 'close', 'close-prevented']),
-  
-      const isOpen: WritableComputedRef<boolean> = computed({
+    const emit = defineEmits(['update:modelValue', 'close', 'close-prevented']);
+    const isOpen = computed({
         get () {
           return props.modelValue
         },
         set (value) {
           emit('update:modelValue', value)
         }
-      })
-  
-      const transitionClass = computed(() => {
+    })
+    
+    const transitionClass = computed(() => {
         if (!props.transition) {
           return {}
         }
   
         return {
-          ...ui.value.transition,
-          enterFrom: props.side === 'left' ? ui.value.translate.left : ui.value.translate.right,
-          enterTo: ui.value.translate.base,
-          leaveFrom: ui.value.translate.base,
-          leaveTo: props.side === 'left' ? ui.value.translate.left : ui.value.translate.right
+          enter: 'transform transition ease-in-out duration-300',
+          leave: 'transform transition ease-in-out duration-200',
+          enterFrom: props.side === 'left' ? '-translate-x-full rtl:translate-x-full' : 'translate-x-full rtl:-translate-x-full',
+          enterTo: 'translate-x-0',
+          leaveFrom: 'translate-x-0',
+          leaveTo: props.side === 'left' ? '-translate-x-full rtl:translate-x-full' : 'translate-x-full rtl:-translate-x-full'
         }
       })
   
-      function close (value: boolean) {
+    const closeFunction = (value: boolean) => {
         if (props.preventClose) {
           emit('close-prevented')
   
@@ -83,6 +96,6 @@
   
         isOpen.value = value
         emit('close')
-      }
+    }
   </script>
   
