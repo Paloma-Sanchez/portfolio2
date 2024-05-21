@@ -13,12 +13,16 @@
                     class=" "
                 />
             </NuxtLink>
-            <navbar-menu-slider
+            <navbar-burguer
+                v-model="isOpen"
                 class="sm:hidden block"
+                @update:modelValue="handleToggleBurguer"
             />
         </div>
         <div>
-            <navbar-button-group/>
+            <navbar-button-group
+                class="hidden sm:flex items-center justify-between text-xl h-min"
+            />
         </div>
         <div
             class="sm:flex items-center hidden "
@@ -31,6 +35,21 @@
 </template>
 <script setup lang="ts">
 import Logo from '../../assets/svg/logo.svg'
+const isOpen = ref(false);
+const emit = defineEmits(['toggleAppearSlideOver']);
+
+const handleToggleBurguer = () => {
+    emit('toggleAppearSlideOver');
+};
+
+const closeNavbarBurguer = () => {
+    isOpen.value = !isOpen.value
+};
+
+defineExpose({
+    closeNavbarBurguer
+});
+
 </script>
 <style >
     .nuxt-icon--fill {

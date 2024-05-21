@@ -1,6 +1,7 @@
 <template>
     <div
-        class="hidden sm:flex items-center justify-between h-min w-[270px] md:w-[540px] text-[#1E1E1E] dark:text-[#E3F0FF] font-Almarai text-xl font-light"
+        class=" w-[270px] md:w-[540px] text-[#1E1E1E] dark:text-[#E3F0FF] font-Almarai font-light"
+        :class="class"
     >
         <NuxtLink
 
@@ -9,6 +10,7 @@
             {{ $t("navbar.cat1")}}
         </NuxtLink>
         <p
+            v-if="dividers"
             class=" text-lg "
         > / </p>
         <NuxtLink
@@ -18,6 +20,7 @@
             {{ $t("navbar.cat2")}}
         </NuxtLink>
         <p
+            v-if="dividers"
             class=" text-lg "
         > / </p>
         <NuxtLink
@@ -28,3 +31,15 @@
         </NuxtLink>
     </div>
 </template>
+<script setup lang="ts">
+    const props = defineProps({
+        class:{
+            type:String,
+            default:''
+        },
+        dividers:{
+            type:Boolean,
+            default:true
+        }
+    })
+</script>

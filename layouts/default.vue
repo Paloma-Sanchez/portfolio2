@@ -3,8 +3,20 @@
         <div
             class="flex justify-center"
         >
-            <navbar/>
-
+            <navbar
+                @toggle-appear-slide-over="handleToggleAppearSlide"
+                ref="navbarInstance"
+            />
+            <navbar-slide-over
+                v-if="isShowSlideOver"
+                v-model="isShowSlideOver"
+                side="left"
+                @close="closeBurguer"
+            >
+                <vertical-menu
+                    @close-slide-over="closeAll"
+                />
+            </navbar-slide-over>
         </div>
         <div
             v-if="path === '/'"
@@ -19,10 +31,24 @@
     <slot/>
 </template>
 <script setup lang="ts">
-    const isOpen = ref(false);
-    
-    const path = computed(() => {
-        const {fullPath} = useRoute()
-        return fullPath
-    }) 
+const isShowSlideOver = ref(false);
+const navbarInstance:object | null = ref(null);
+
+const closeBurguer = () => {
+    navbarInstance.value.closeNavbarBurguer();
+};
+
+const handleToggleAppearSlide = () => {
+    isShowSlideOver.value = !isShowSlideOver.value
+};
+
+const closeAll = () => {
+    handleToggleAppearSlide();
+    closeBurguer();
+}
+
+const path = computed(() => {
+    const {fullPath} = useRoute()
+    return fullPath
+}) 
 </script>
