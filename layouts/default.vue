@@ -15,7 +15,6 @@
             />
         </div>
     </div>
-    <navbar-slide-over/>
 
     <slot/>
 </template>
