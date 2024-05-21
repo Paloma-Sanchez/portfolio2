@@ -25,7 +25,7 @@
         <Icon
             name="fa6-brands:linkedin"
             color="#1E1E1E dark:white "
-            class="bg-white  dark:bg-[#E3F0FF] opacity-0 animate-thirdDot"
+            class=" dark:bg-[#E3F0FF] opacity-0 animate-thirdDot"
             :class="thirdLogo"
             :width="iconsSize"
             :height="iconsSize"

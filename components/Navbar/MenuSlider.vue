@@ -1,8 +1,11 @@
 <template>
-    <navbar-burguer
-        v-model="isOpen"
-        @update:model-value="handleToggleMenu"
-    />
+    <div
+    >
+        <navbar-burguer
+            v-model="isOpen"
+            @update:model-value="handleToggleMenu"
+        />
+    </div>
 
 </template>
 <script setup lang="ts">

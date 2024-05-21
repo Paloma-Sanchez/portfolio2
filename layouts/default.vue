@@ -15,10 +15,13 @@
             />
         </div>
     </div>
+    <navbar-slide-over/>
 
     <slot/>
 </template>
 <script setup lang="ts">
+    const isOpen = ref(false);
+    
     const path = computed(() => {
         const {fullPath} = useRoute()
         return fullPath

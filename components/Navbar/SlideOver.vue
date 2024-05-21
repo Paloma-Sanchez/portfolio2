@@ -1,5 +1,5 @@
 <template>
-      <HDialog 
+      <main
         class="fixed inset-0 flex z-50"
         :class="[
             {
@@ -8,25 +8,25 @@
         ]" 
         @close="closeFunction"
       >
-        <TransitionChild 
+        <div
             v-if="overlay" 
             as="template" 
             :appear="appear" 
         >
           <div class="fixed inset-0 transition-opacity bg-gray-200/75 dark:bg-gray-800/75" />
-        </TransitionChild>
+        </div>
   
-        <TransitionChild 
+        <div
             as="template" 
             :appear="appear" 
-            v-bind="transitionClass"
+            v-bind="transitionClass"`
         >
-          <HDialogPanel 
+          <div
             class="relative flex-1 flex flex-col w-full focus:outline-none max-w-md bg-white dark:bg-gray-900">
             <slot />
-          </HDialogPanel>
-        </TransitionChild>
-      </HDialog>
+          </div>
+        </div>
+      </main>
   </template>
   
   <script setup lang="ts">
