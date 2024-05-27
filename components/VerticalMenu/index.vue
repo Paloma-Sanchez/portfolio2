@@ -1,6 +1,6 @@
 <template>
     <button
-        class="flex justify-start w-fit ml-7 mt-7 mb-8"
+        class="flex justify-start w-fit ml-8 mt-10 mb-20"
         type="button"
         @click="handleBackArrowClick"
     >
@@ -11,11 +11,11 @@
     </button>
     <navbar-button-group
         :dividers="false"
-        class="flex flex-col items-center mx-auto mb-28 text-4xl h-56 justify-between"
+        class="flex flex-col items-center mx-auto mb-40 text-4xl h-56 justify-between"
         @click="handleBackArrowClick"
     />
     <div
-        class="flex items-center justify-end mr-16"
+        class="flex items-center justify-end mr-14"
     >
         <navbar-dark-mode
             class="mr-5"

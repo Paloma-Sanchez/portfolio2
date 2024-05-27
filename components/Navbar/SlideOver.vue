@@ -1,30 +1,24 @@
 <template>
-      <main
-        class="fixed inset-0 flex z-50"
-        :class="[
+  <main class="fixed inset-0 flex  z-50 opacity-0 transform " :class="[
             {
-                'justify-end': side === 'right' 
+              'justify-end': side === 'right',
+              'animate-slideLeft': modelValue,
+              'animate-slideRight': !modelValue,
             }
-        ]" 
-      >
-        <div
-            v-if="modelValue" 
-            @click="closeFunction"
-        >
-          <div class="fixed inset-0 transition-opacity bg-gray-200/75 dark:bg-gray-800/75" />
-        </div>
-  
-        <template
-            v-if="modelValue" 
-            v-bind="transitionClass"
-        >
-          <div
-            class="relative flex-1 flex flex-col w-full h-full focus:outline-none max-w-md bg-white dark:bg-gray-900">
-            <slot />
-          </div>
-        </template>
-      </main>
-  </template>
+        ]">
+    <div @click.prevent="closeFunction">
+      <div class="fixed inset-0  bg-gray-200/75 dark:bg-gray-800/75 backdrop-blur-sm">
+      </div>
+    </div>
+
+    <template v-if="true">
+      <div
+        class="relative flex-1 flex flex-col w-full h-full focus:outline-none max-w-md bg-white/40 dark:bg-gray-900/50 backdrop-blur-md">
+        <slot />
+      </div>
+    </template>
+  </main>
+</template>
   
   <script setup lang="ts">
 
@@ -91,4 +85,3 @@
 
 
   </script>
-  

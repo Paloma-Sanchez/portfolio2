@@ -8,7 +8,6 @@
                 ref="navbarInstance"
             />
             <navbar-slide-over
-                v-if="isShowSlideOver"
                 v-model="isShowSlideOver"
                 side="left"
                 @close="closeBurguer"
