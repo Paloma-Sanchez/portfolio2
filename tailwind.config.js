@@ -71,28 +71,6 @@ export default {
             opacity: 1
           }
         },
-        slideLeft: {
-          '0%': {
-            transform: 'translateX(-700px)',
-            opacity: 0
-          },
-          '100%': {
-            transform: 'translateX(0px)',
-            opacity: 1 
-          }
-        },
-        slideRight: {
-          '0%': {
-            transform: 'translateX(0px)',
-            opacity: 1 
-
-          },
-          '100%': {
-            transform: 'translateX(-700px)',
-            opacity: 0
-
-          }
-        }
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
@@ -107,8 +85,6 @@ export default {
         secondDot:'rotatingDotIntro 300ms linear 650ms forwards',
         thirdDot:'rotatingDotIntro 300ms linear 800ms forwards',
         appear: 'appear 700ms linear forwards',
-        slideLeft:'slideLeft 400ms ease-in-out forwards',
-        slideRight:'slideRight 400ms ease-in forwards'
 
       },
     },

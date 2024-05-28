@@ -1,13 +1,19 @@
 <template>
-  <main class="fixed inset-0 flex  z-50 opacity-0 transform " :class="[
-            {
-              'justify-end': side === 'right',
-              'animate-slideLeft': modelValue,
-              'animate-slideRight': !modelValue,
-            }
-        ]">
-    <div @click.prevent="closeFunction">
-      <div class="fixed inset-0  bg-gray-200/75 dark:bg-gray-800/75 backdrop-blur-sm">
+  <main 
+    class="fixed inset-0 flex   opacity-0 -translate-x-full sm:hidden transforn" 
+    :class="[
+      {
+        'justify-end': side === 'right',
+        'animate-left': modelValue,
+        'animate-right': !modelValue,
+      }
+    ]">
+    <div 
+      @click.prevent="closeFunction"
+    >
+      <div 
+        class="fixed inset-0  bg-gray-200/75 dark:bg-gray-800/75 backdrop-blur-sm"
+      >
       </div>
     </div>
 
@@ -85,3 +91,21 @@
 
 
   </script>
+<style>
+.animate-left ,
+.animate-right{
+  transition: all 400ms ease;
+}
+
+.animate-left {
+  transform: translateX(0px);
+  opacity: 1;
+  z-index: 50;
+}
+
+.animate-right{
+  transform: translateX(-640px);
+  opacity: 0;
+  z-index: -10;
+}
+</style>

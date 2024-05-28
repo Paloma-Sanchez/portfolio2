@@ -3,22 +3,22 @@
         {
             "name":"Prello",
             "url":"https://prello.netlify.app/",
-            "video":""
-        },
-        {
-            "name":"Radio Card Group",
-            "url":"",
-            "video":""
+            "video1":"/_nuxt/assets/video/prello.mp4",
+            "video2":"/_nuxt/assets/video/prello.webm"
+
         },
         {
             "name":"Crisp plugin",
             "url":"",
-            "video":""
+            "video1":"",
+            "video2":""
         },
         {
             "name":"P-mail",
             "url":"https://pmail.netlify.app/",
-            "video":""
+            "video1":"/_nuxt/assets/video/pmail.mp4",
+            "video2":"/_nuxt/assets/video/pmail.webm"
+
         }
     ]
 }
