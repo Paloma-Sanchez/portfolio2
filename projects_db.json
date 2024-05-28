@@ -16,8 +16,8 @@
         {
             "name":"P-mail",
             "url":"https://pmail.netlify.app/",
-            "video1":"~/assets/video/pmail.mp4",
-            "video2":"~/assets/video/pmail.webm"
+            "video1":"/_nuxt/assets/video/pmail.mp4",
+            "video2":"/_nuxt/assets/video/pmail.webm"
 
         }
     ]
