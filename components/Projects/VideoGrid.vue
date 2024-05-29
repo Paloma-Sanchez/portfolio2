@@ -15,7 +15,7 @@
                     @mouseleave="stopVideo(index)"
                 >
                     <source
-                        src="../../assets/video/pmail.webm"
+                        :src="project.video2"
                         type="video/webm; codecs=vp9,opus"
                     />
                     <source 
