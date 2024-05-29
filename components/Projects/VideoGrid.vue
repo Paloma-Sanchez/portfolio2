@@ -15,10 +15,15 @@
         @mouseover="playVideo(index)"
         @mouseleave="stopVideo(index)"
       >
+        <NuxtLink 
+            :to="project.url"
+            target="_blank"
+        >
         <video class="w-full" ref="videoInstance" muted>
           <source :src="videosWebm[index]" type="video/webm; codecs=vp9,opus" />
           <source :src="videosMp4[index]" type="video/mp4; codecs=hvc1" />
         </video>
+        </NuxtLink>
       </div>
       <div
         v-for="(project, index) in projects"
