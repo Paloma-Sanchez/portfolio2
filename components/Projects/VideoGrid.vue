@@ -15,11 +15,11 @@
                     @mouseleave="stopVideo(index)"
                 >
                     <source
-                        :src="project.video2"
+                        :src="videosWebm[index]"
                         type="video/webm; codecs=vp9,opus"
                     />
                     <source 
-                        :src="project.video1"
+                        :src="videosMp4[index]"
                         type="video/mp4; codecs=hvc1"
                     />
                 </video>
@@ -51,6 +51,14 @@
 <script setup lang="ts">
 import { twJoin, twMerge } from 'tailwind-merge';
 import { projects } from '../../projects_db.json';
+import prelloVideoWebm from '../../assets/video/prello.webm';
+import prelloVideoMp4 from '../../assets/video/prello.mp4';
+import pmailVideoWebm from '../../assets/video/pmail.webm';
+import pmailVideoMp4 from '../../assets/video/pmail.mp4';
+
+const videosWebm = [prelloVideoWebm, null, pmailVideoWebm];
+const videosMp4 = [prelloVideoMp4, null, pmailVideoMp4];
+
 const videoInstance = ref([]);
 
 
