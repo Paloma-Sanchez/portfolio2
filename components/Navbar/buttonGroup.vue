@@ -4,7 +4,7 @@
         :class="class"
     >
         <NuxtLink
-
+            to="/about"
             class="cursor-pointer  "
         >
             {{ $t("navbar.cat1")}}
