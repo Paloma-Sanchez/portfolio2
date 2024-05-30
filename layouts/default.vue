@@ -24,7 +24,7 @@
             class="relative -z-10"
         >
             <landing-circle-logo-ensemble
-                class="w-[820px] h-[820px] absolute -top-[164px] sm:-top-[134px] -right-40  sm:-right-20 xl:right-0    "
+                class="absolute -top-[164px] sm:-top-[134px] right-0    "
             />
         </div>
     </div>
@@ -53,3 +53,4 @@ const path = computed(() => {
     return fullPath
 }) 
 </script>
+-right-40 sm:-right-20 xl:
