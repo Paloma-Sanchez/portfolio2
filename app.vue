@@ -1,6 +1,6 @@
 <template>
   <Html
-    class="overflow-hidden "
+
     :class="[
       {
         'bg-[#DCECFF]': $colorMode.preference === 'light' && path !== '/projects',

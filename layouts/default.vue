@@ -1,5 +1,7 @@
 <template>
-    <div>
+    <div
+        class="w-sreen"
+    >
         <div
             class="flex justify-center"
         >
@@ -22,7 +24,7 @@
             class="relative -z-10"
         >
             <landing-circle-logo-ensemble
-                class="w-[820px] h-[820px] border-2 border-[#BEBEBE]  rounded-full absolute -top-[544px] left-3/4  lg:animate-rotate65Up15 xl:animate-rotate65Up5 desktop:animate-rotate65Up0 -rotate-[65deg]  "
+                class="w-[820px] h-[820px] absolute -top-[164px] sm:-top-[134px] -right-40  sm:-right-20 xl:right-0    "
             />
         </div>
     </div>
