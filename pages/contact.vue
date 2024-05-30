@@ -15,7 +15,7 @@
                 !
         </p>
         <div
-            class="flex mt-20 sm:mt-28 font-Almarai text-[#317BCB] dark:text-[#69B7FF] text-xl sm:text-3xl justify-center items-center animate-slideContactUp opacity-0"
+            class="flex mt-20 sm:mt-28 font-Almarai text-[#317BCB] dark:text-[#69B7FF] text-xl sm:text-3xl justify-center items-center animate-slideUp900Delay opacity-0"
         >
             <p
                 class="mr-2 "

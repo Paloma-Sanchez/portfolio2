@@ -2,23 +2,21 @@
     "projects": [
         {
             "name":"Prello",
+            "summary":"Personal project february '24",
             "url":"https://prello.netlify.app/",
-            "video1":"/_nuxt/assets/video/prello.mp4",
-            "video2":"/_nuxt/assets/video/prello.webm"
-
+            "videoClass":"transform -translate-x-20 w-[60%] xl:w-[45%]"
         },
         {
             "name":"Crisp plugin",
             "url":"",
-            "video1":"",
-            "video2":""
+            "summary":"Auto resolve chat conversations ",
+            "videoClass":""
         },
         {
             "name":"P-mail",
             "url":"https://pmail.netlify.app/",
-            "video1":"/_nuxt/assets/video/pmail.mp4",
-            "video2":"/_nuxt/assets/video/pmail.webm"
-
+            "summary":"Personal project january '24",
+            "videoClass":""
         }
     ]
 }

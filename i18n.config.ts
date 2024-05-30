@@ -14,7 +14,7 @@ export default defineI18nConfig(() => ({
             title3: "Developer",
         },
         about:{
-            title: "About",
+            title: "About me",
             p0: "I'm a freelance front-end developper from Nantes,  France.",
             p1: "In 2016 I graduated from the National Institue of Applied Sciences (INSA) in Lyon and got my Engineering Degree in Mechanics.",
             p2: "After 6 years working in the fields of luxury goods and automobiles, I decided to follow my passion and become a web developer.",

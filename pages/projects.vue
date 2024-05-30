@@ -1,13 +1,10 @@
 <template>
     <main>
-        <p
-            class="font-Archivo text-5xl lg:text-6xl xl:text-8xl text-[#1B4572] dark:text-[#DCECFF] font-extrabold text-center lg:text-left mt-16  lg:mt-20 lg:ml-20  xl:ml-32 mb-10 lg:mb-0"
-        >
-            {{ $t ("projects.title")}}
-        </p>
-        <projects-video-grid
-            class="lg:ml-[37%] xl:ml-[45%] lg:-mt-28 xl:-mt-36 flex justify-center"
-        />
+        <h1
+            class="bg-gradient-to-b from-white dark:to-black to-[#3B4856] bg-clip-text text-transparent uppercase text-[70px] sm:text-[124px] md:text-[150px] lg:text-[202px] xl:text-[252px] desktop:text-[264px] font-bold text-center opacity-0 animate-slideUpImmediate">
+            {{ $t("projects.title") }}
+        </h1>
+        <projects-video-grid />
     </main>
 
 </template>

@@ -1,64 +1,114 @@
 <template>
-  <div>
-    <div
-      class="grid grid-cols-2 w-[640px] max-h-[632px] overflow-y-scroll rounded overflow-hidden"
-    >
+  <div class="flex justify-center mt-10 mb-10 opacity-0 animate-slideUp400Delay">
+    <div class="grid grid-cols-2 gap-y-8 xl:pl-20 auto-rows-[256px] xl:grid-cols-3 w-11/12 rounded">
       <div
         v-for="(project, index) in projects"
-        class="h-52 flex overflow-hidden"
+        class="overflow-hidden"
         :class="[
-          gridProjectElementClass(index),
+          gridProjectVideoClass(index),
+          gridProjectVideoClassXl(index),
           {
-            'h-[90%] mt-4': index === 2,
+            ' mt-4': index === 2,
+       
           },
         ]"
         @mouseover="playVideo(index)"
         @mouseleave="stopVideo(index)"
       >
-        <NuxtLink 
-            :to="project.url"
-            target="_blank"
-        >
-        <video class="w-full" ref="videoInstance" muted>
-          <source :src="videosWebm[index]" type="video/webm; codecs=vp9,opus" />
-          <source :src="videosMp4[index]" type="video/mp4; codecs=hvc1" />
-        </video>
-        </NuxtLink>
-      </div>
       <div
-        v-for="(project, index) in projects"
-        class="h-52 w-[311.5px] overflow-hidden ml-auto"
-        @mouseenter="handleMouseEnterOverlay(index)"
-        @mouseleave="mouseActive = false"
-        :class="[
-          gridProjectElementClass(index),
-          {
-            'animate-down': mouseActive && indexActive === index,
-            'animate-up': !mouseActive,
-          },
-        ]"
+          class="absolute  h-64 z-20  overflow-hidden  "
+          :class="[
+            {
+              'xl:transform xl:-translate-x-32 w-[45%]': index === 0,
+              'w-[45%] xl:w-[30%]': index === 1,
+              'w-[45%] xl:w-[30%] ': index === 2
+            }
+          ]"
       >
-        <div class="relative h-52 bg-gray-200/75">
-          <div>
+          <div
+            class="relative w-[110%]"
+            >
             <div
-              class="absolute bg-gray-200/75 dark:bg-gray-800/75 backdrop-blur-sm"
+                class="h-0 w-[110%] bg-black absolute z-10 "
+                :class="
+                    [
+                        {
+                           'height-scale': mouseActive && index === indexActive,
+                           'height-unscale': !mouseActive && index === indexActive,
+                        }
+                    ]"
             ></div>
-          </div>
+            <div
+                class="h-full w-0 bg-black absolute z-10 "
+                :class="[
+                        {
+                           'width-scale': mouseActive && index === indexActive,
+                           'width-unscale': !mouseActive && index === indexActive, 
+                        }
+                    ]"
+            ></div>
+             <div
+                class="h-full w-0 bg-black absolute z-10 right-0"
+                :class="[
+                        {
+                           'width-scale': mouseActive && index === indexActive,
+                           'width-unscale': !mouseActive && index === indexActive, 
+                        }
+                    ]"
+            ></div>
+            <NuxtLink :to="project.url" target="_blank">
+            <video 
+                class="" 
+                :class="[
+                    {
+                        'video-scale': mouseActive && index === indexActive,
+                        'video-unscale':!mouseActive && index === indexActive,
+                    
+                    }
+                ]"
+                ref="videoInstance" 
+                muted
+                >
+                <source :src="videosWebm[index]" type="video/webm; codecs=vp9,opus" />
+                <source :src="videosMp4[index]" type="video/mp4; codecs=hvc1" />
+            </video>
+            </NuxtLink>
+            <div
+                class="h-0 w-full bg-black absolute z-10 bottom-10"
+                :class="[
+                        {
+                           'height-scale': mouseActive && index === indexActive,
+                           'height-unscale': !mouseActive && index === indexActive,
+                        
+                        }
+                    ]"
+            ></div>
         </div>
+
+          
       </div>
+        
+        
+      </div>
+
       <div
         v-for="(project, index) in projects"
-        class="h-52 flex items-end"
-        :class="gridNumberElementClass(index)"
+        class="h-full flex items-center"
+        :class="[gridNumberClass(index), gridNumberClassXl(index)]"
       >
         <div
-          class="flex items-end justify-around w-full text-xl font-Archivo dark:text-[#DCECFF]"
-        >
-          <p class="font-extralight">
+          class="flex  flex-col items-start justify-around w-full text-xl font-Archivo dark:text-[#DCECFF]"
+          :class="[
+            {
+               'ml-20': index !==0
+            }
+          ]"        
+          >
+          <p class=" text-7xl uppercase font-kannadaFake ">
             {{ project.name }}
           </p>
-          <p class="text-6xl">
-            {{ index + 1 }}
+          <p class="text-xl font-Archivo font-extralight">
+            {{ project.summary }}
           </p>
         </div>
       </div>
@@ -72,15 +122,17 @@ import prelloVideoWebm from "../../assets/video/prello.webm";
 import prelloVideoMp4 from "../../assets/video/prello.mp4";
 import pmailVideoWebm from "../../assets/video/pmail.webm";
 import pmailVideoMp4 from "../../assets/video/pmail.mp4";
+import autoResolverWebm from "../../assets/video/autoResolve.webm";
+import autoResolverMp4 from "../../assets/video/autoResolve.mp4";
 
-const videosWebm = [prelloVideoWebm, null, pmailVideoWebm];
-const videosMp4 = [prelloVideoMp4, null, pmailVideoMp4];
+const videosWebm = [prelloVideoWebm, autoResolverWebm, pmailVideoWebm];
+const videosMp4 = [prelloVideoMp4, autoResolverMp4, pmailVideoMp4];
 
 const mouseActive = ref(false);
 const indexActive = ref(null);
 const videoInstance = ref([]);
 
-const gridNumberElementClass = (index: number): string => {
+const gridNumberClass = (index: number): string => {
   const colStartSecond = (index + 1) % 2 !== 0 ? "col-start-1" : "";
   const colStartFirst = (index + 1) % 2 === 0 ? "col-start-2" : "";
   const row = "row-end-" + (index + 2).toString();
@@ -88,12 +140,32 @@ const gridNumberElementClass = (index: number): string => {
   return twMerge(twJoin(colStartSecond, colStartFirst, row));
 };
 
-const gridProjectElementClass = (index: number): string => {
+const gridNumberClassXl = (index: number): string => {
+  const colStartFirst = (index + 1 - 1) % 4 === 0 ? "xl:col-start-1" : "";
+  const colStartSecond = (index + 1) % 2 === 0 ? "xl:col-start-2" : "";
+  const colStartThird = (index + 1 - 1) % 2 === 0 ? "xl:col-start-3" : "";
+  const row = "row-end-" + (index + 2).toString();
+
+  return twMerge(twJoin(colStartThird, colStartSecond, colStartFirst, row));
+};
+
+const gridProjectVideoClass = (index: number): string => {
   const colStartSecond = (index + 1) % 2 !== 0 ? "col-start-2" : "";
-  const colStartFirst = (index + 1) % 2 === 0 ? "col-start-1" : "";
+  const colStartFirst =
+    (index + 1) % 4 === 0 ? "col-start-3" : (index + 1) % 2 === 0 ? "col-start-1" : "";
   const row = "row-end-" + (index + 2).toString();
 
   return twMerge(twJoin(colStartSecond, colStartFirst, row));
+};
+
+const gridProjectVideoClassXl = (index: number): string => {
+  const colStartFirst =
+    (index + 1) % 2 === 0 && (index + 1) % 4 !== 0 ? "xl:col-start-1" : "";
+  const colStartSecond = (index + 1 - 1) % 2 === 0 ? "xl:col-start-2" : "";
+  const colStartThird = (index + 1) % 4 === 0 ? "xl:col-start-3" : "";
+  const row = "row-end-" + (index + 2).toString();
+
+  return twMerge(twJoin(colStartThird, colStartSecond, colStartFirst, row));
 };
 
 const handleMouseEnterOverlay = (index) => {
@@ -103,6 +175,7 @@ const handleMouseEnterOverlay = (index) => {
 };
 
 const playVideo = (index: number) => {
+  indexActive.value = index;
   mouseActive.value = true;
   videoInstance.value[index].play();
 };
@@ -114,22 +187,36 @@ const stopVideo = (index: number) => {
 };
 </script>
 <style>
-.animate-up,
-.animate-down {
-  transition: all 300ms ease;
+.video-scale,
+.video-unscale,
+.height-scale,
+.height-unscale,
+.width-scale,
+.width-unscale {
+  transition: all 500ms ease-in-out;
 }
 
-.animate-up {
-  transform: translateY(0px);
+.video-scale {
+  transform: scale(105%);
 }
 
-.animate-down {
-  width: 0;
+.video-unscale {
+    transform: scale(100%);
 }
 
-.animate {
-  transform: translateY(208px);
-  opacity: 0;
-  z-index: -10;
+.height-scale{
+    height: 10px;
+}
+
+.height-unscale {
+    height: 0;
+}
+
+.width-scale {
+    width: 10px;
+}
+
+.width-unscale {
+    width: 0;
 }
 </style>
