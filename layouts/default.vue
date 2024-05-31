@@ -1,13 +1,12 @@
 <template>
-    <div
-        class="w-sreen"
-    >
+    <div>
         <div
             class="flex justify-center"
         >
             <navbar
                 @toggle-appear-slide-over="handleToggleAppearSlide"
                 ref="navbarInstance"
+                class="relative z-10"
             />
             <navbar-slide-over
                 v-model="isShowSlideOver"
@@ -21,10 +20,10 @@
         </div>
         <div
             v-if="path === '/'"
-            class="relative -z-10"
+            class="relative "
         >
             <landing-circle-logo-ensemble
-                class="absolute -top-[164px] sm:-top-[134px] right-0    "
+                class="absolute -top-[164px] sm:-top-[134px] right-0 "
             />
         </div>
     </div>

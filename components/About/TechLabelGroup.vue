@@ -1,8 +1,14 @@
 <template>
-    <about-tech-label-group
-        v-for="label in labelArray"
-        :label="label"
-    />
+    <div
+        class="flex justify-end p-4 mb-8 mx-8  w-fit rounded-md flex-wrap"
+    >
+        <about-tech-label
+            v-for="label in labelArray"
+            :label="label"
+        />
+
+    </div>
+
 </template>
 <script setup lang="ts">
 const props = defineProps({

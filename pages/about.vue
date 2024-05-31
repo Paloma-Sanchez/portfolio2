@@ -2,8 +2,7 @@
     <main>
         <div class="h-[85vh] ">
             <h1
-                class="bg-gradient-to-b from-white dark:to-black to-[#3B4856] bg-clip-text text-transparent uppercase text-[70px] sm:text-[124px] md:text-[150px] lg:text-[202px] xl:text-[252px] desktop:text-[264px] font-bold text-center mt-16 sm:mt-16 md:mt-8 lg:mt-4 opacity-0 animate-slideUpImmediate  "
-            >
+                class="bg-gradient-to-b from-white dark:to-black to-[#3B4856] bg-clip-text text-transparent uppercase text-[70px] sm:text-[124px] md:text-[150px] lg:text-[202px] xl:text-[252px] desktop:text-[264px] font-bold text-center mt-16 sm:mt-16 md:mt-8 lg:mt-4 opacity-0 animate-slideUpImmediate  ">
                 {{ $t("about.title") }}
             </h1>
             <div class=" flex justify-center">
@@ -28,14 +27,32 @@
             </div>
         </div>
 
-        <h2 class="text-2xl mr-56 w-1/2 dark:text-white ">
-            Technologies
-        </h2>
-        <about-tech-label-group/>
 
+        <div class=" flex justify-center">
+            <div class="grid grid-cols-1 md:grid-cols-3 sm:min-w-[80%] max-w-[1352px]">
+                <h2 
+                    data-aos="fade-up"
+                    class="text-right uppercase dark:text-white ml-20 col-start-2 col-span-2 mb-20 bg-gradient-to-b from-white dark:to-black to-[#3B4856] bg-clip-text text-transparent text-[70px] sm:text-[100px] font-bold"
+                >
+                    Technologies
+                </h2>
+                <div
+                    data-aos="fade-up"
+                    class="col-span-2  row-start-2 " 
+                >
+                    <about-tech-label-group 
+                        :label-array="technologiesArray" 
+                    />
+                </div>
+                
+
+            </div>
+        </div>
     </main>
 </template>
 <script setup lang="ts">
+
+
 const technologiesArray = [
     'HTML & CSS',
     'Vue.js',

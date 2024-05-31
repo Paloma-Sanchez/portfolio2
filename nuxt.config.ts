@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "nuxt-icon",
     "@nuxtjs/i18n",
-    "@nuxtjs/i18n"
+    "nuxt-aos"
   ],
   googleFonts: {
     families: {
