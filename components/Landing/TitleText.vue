@@ -1,6 +1,6 @@
 <template>
     <div
-        class="text-lg font-light font-Almarai text-[#2F399E] dark:text-white" 
+        class="text-lg font-light font-Almarai text-sky-700 dark:text-white" 
     >
         <p
             class="ml-24  desktop:m-0"

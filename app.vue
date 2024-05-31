@@ -3,7 +3,7 @@
 
     :class="[
       {
-        'bg-[#DCECFF]': $colorMode.preference === 'light' && path !== '/projects',
+        'bg-[#DCECFF]': $colorMode.preference === 'light' && path === '/',
         'bg-black': $colorMode.preference === 'dark'
       }
     ]"

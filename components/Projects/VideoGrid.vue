@@ -1,6 +1,6 @@
 <template>
-  <div class="flex justify-center mt-10 mb-10 opacity-0 animate-slideUp400Delay">
-    <div class="grid grid-cols-2 gap-y-8 xl:pl-20 auto-rows-[256px] xl:grid-cols-3 w-11/12 rounded">
+  <div class="flex justify-center mt-6 sm:mt-10 mb-10 opacity-0 animate-slideUp400Delay">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 sm:gap-y-8 xl:pl-20 auto-rows-[256px] sm:auto-rows-[208px] lg:auto-rows-[256px] xl:grid-cols-3 w-11/12 rounded">
       <div
         v-for="(project, index) in projects"
         class="overflow-hidden"
@@ -8,28 +8,27 @@
           gridProjectVideoClass(index),
           gridProjectVideoClassXl(index),
           {
-            ' mt-4': index === 2,
-       
+            '': index === 2,
           },
         ]"
         @mouseover="playVideo(index)"
         @mouseleave="stopVideo(index)"
       >
       <div
-          class="absolute  h-64 z-20  overflow-hidden  "
+          class="absolute h-64 sm:h-52 lg:h-64 z-20  overflow-hidden  "
           :class="[
             {
-              'xl:transform xl:-translate-x-32 w-[45%]': index === 0,
-              'w-[45%] xl:w-[30%]': index === 1,
-              'w-[45%] xl:w-[30%] ': index === 2
+              'w-[91%] sm:w-[45%] xl:transform xl:-translate-x-24 desktop:-translate-x-32 ': index === 0,
+              'w-[91%] sm:w-[45%] xl:w-[30%]': index === 1,
+              'w-[91%] sm:w-[45%] xl:w-[30%] ': index === 2
             }
           ]"
       >
           <div
-            class="relative w-[110%]"
+            class="relative xl:w-[110%]"
             >
             <div
-                class="h-0 w-[110%] bg-black absolute z-10 "
+                class="h-0 xl:w-[110%] bg-white dark:bg-black absolute z-10 "
                 :class="
                     [
                         {
@@ -39,7 +38,7 @@
                     ]"
             ></div>
             <div
-                class="h-full w-0 bg-black absolute z-10 "
+                class="h-full w-0 bg-white dark:bg-black absolute z-10 "
                 :class="[
                         {
                            'width-scale': mouseActive && index === indexActive,
@@ -48,7 +47,7 @@
                     ]"
             ></div>
              <div
-                class="h-full w-0 bg-black absolute z-10 right-0"
+                class="h-full w-0 bg-white dark:bg-black absolute z-10 right-0"
                 :class="[
                         {
                            'width-scale': mouseActive && index === indexActive,
@@ -74,7 +73,7 @@
             </video>
             </NuxtLink>
             <div
-                class="h-0 w-full bg-black absolute z-10 bottom-10"
+                class="h-0 w-full bg-white dark:bg-black absolute z-10 bottom-10"
                 :class="[
                         {
                            'height-scale': mouseActive && index === indexActive,
@@ -93,7 +92,7 @@
 
       <div
         v-for="(project, index) in projects"
-        class="h-full flex items-center"
+        class="hidden h-full sm:flex items-center"
         :class="[gridNumberClass(index), gridNumberClassXl(index)]"
       >
         <div
@@ -150,10 +149,10 @@ const gridNumberClassXl = (index: number): string => {
 };
 
 const gridProjectVideoClass = (index: number): string => {
-  const colStartSecond = (index + 1) % 2 !== 0 ? "col-start-2" : "";
+  const colStartSecond = (index + 1) % 2 !== 0 ? "sm:col-start-2" : "";
   const colStartFirst =
-    (index + 1) % 4 === 0 ? "col-start-3" : (index + 1) % 2 === 0 ? "col-start-1" : "";
-  const row = "row-end-" + (index + 2).toString();
+    (index + 1) % 4 === 0 ? "sm:col-start-3" : (index + 1) % 2 === 0 ? "sm:col-start-1" : "";
+  const row = "sm:row-end-" + (index + 2).toString();
 
   return twMerge(twJoin(colStartSecond, colStartFirst, row));
 };
@@ -163,7 +162,7 @@ const gridProjectVideoClassXl = (index: number): string => {
     (index + 1) % 2 === 0 && (index + 1) % 4 !== 0 ? "xl:col-start-1" : "";
   const colStartSecond = (index + 1 - 1) % 2 === 0 ? "xl:col-start-2" : "";
   const colStartThird = (index + 1) % 4 === 0 ? "xl:col-start-3" : "";
-  const row = "row-end-" + (index + 2).toString();
+  const row = "sm:row-end-" + (index + 2).toString();
 
   return twMerge(twJoin(colStartThird, colStartSecond, colStartFirst, row));
 };

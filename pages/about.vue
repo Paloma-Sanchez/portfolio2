@@ -10,7 +10,7 @@
                     <div
                         class="mx-auto  sm:col-start-2 flex-col items-center md:items-end mt-12 sm:mt-20 md:mt-20 lg:mt-20 xl:mt-12 desktop:mt-4 w-9/12 opacity-0 animate-slideUp400Delay ">
                         <p
-                            class="  text-center sm:text-left text-base sm:text-lg md:text-xl dark:text-white font-light ">
+                            class="text-center sm:text-left text-base sm:text-lg md:text-xl text-[#1E1E1E] dark:text-[#E3F0FF]  font-light font-Archivo ">
                             I'm Paloma a french Frontend Focused Web Developer building and managing the Front-end of
                             Websites and
                             Web Applications that lead to the success of the overall product.
@@ -28,23 +28,16 @@
         </div>
 
 
-        <div class=" flex justify-center">
-            <div class="grid grid-cols-1 md:grid-cols-3 sm:min-w-[80%] max-w-[1352px]">
-                <h2 
-                    data-aos="fade-up"
-                    class="text-right uppercase dark:text-white ml-20 col-start-2 col-span-2 mb-20 bg-gradient-to-b from-white dark:to-black to-[#3B4856] bg-clip-text text-transparent text-[70px] sm:text-[100px] font-bold"
-                >
+        <div class=" flex justify-center mb-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 min-w-[80%] max-w-[1352px]">
+                <h2 data-aos="fade-up"
+                    class="text-center  uppercase  sm:ml-20 sm:mr-3 mb-16 sm:mb-20 sm:col-start-2 col-span-2  bg-gradient-to-b from-white dark:to-black to-[#3B4856] bg-clip-text text-transparent text-6xl lg:text-[74px] xl:text-[100px] font-bold ">
                     Technologies
                 </h2>
-                <div
-                    data-aos="fade-up"
-                    class="col-span-2  row-start-2 " 
-                >
-                    <about-tech-label-group 
-                        :label-array="technologiesArray" 
-                    />
+                <div class="sm:col-span-2 sm:row-start-2 ">
+                    <about-tech-label-group :label-array="technologiesArray" />
                 </div>
-                
+
 
             </div>
         </div>

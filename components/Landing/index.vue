@@ -35,11 +35,7 @@
     >
         karenpaloma.sanchez@gmail.com
     </p>
-    <p
-        class=" block sm:hidden ext-lg font-light font-Almarai text-[#2F399E] dark:text-white text-center mt-12"
-    >
-        Feelance Frontend Developper
-    </p>
+
 </main>
 </template>
 <script setup lang="ts">
