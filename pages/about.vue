@@ -1,7 +1,7 @@
 <template>
     <main>
         <div 
-            class="h-[85vh] xl:h-[80vh] flex flex-col justify-between "
+            class="h-[83vh] xl:h-[80vh] flex flex-col justify-between "
             :class="[
 
                 ]"
