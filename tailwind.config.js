@@ -25,6 +25,10 @@ export default {
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%': { transform: 'rotate(3deg)' },
         },
+        rotate: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
         rotate65Up0: {
           '0%': { transform: 'rotate(-65deg)' },
           '100%': { transform: 'rotate(0deg)' },
@@ -87,6 +91,7 @@ export default {
         secondDot:'rotatingDotIntro 300ms linear 650ms forwards',
         thirdDot:'rotatingDotIntro 300ms linear 800ms forwards',
         appear: 'appear 700ms linear forwards',
+        infiniteRotation: 'rotation linear '
 
       },
     },

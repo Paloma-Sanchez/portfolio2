@@ -1,6 +1,13 @@
 <template>
     <main>
-        <div class="h-[85vh] ">
+        <div 
+            class="h-[85vh] flex flex-col  "
+            :class="[
+                    {
+                        'justify-between':!hiddenScroll
+                    }
+                ]"
+        >
             <h1
                 class="bg-gradient-to-b from-white dark:to-black to-[#3B4856] bg-clip-text text-transparent uppercase text-[70px] sm:text-[124px] md:text-[150px] lg:text-[202px] xl:text-[252px] desktop:text-[264px] font-bold text-center mt-16 sm:mt-16 md:mt-8 lg:mt-4 opacity-0 animate-slideUpImmediate  ">
                 {{ $t("about.title") }}
@@ -25,8 +32,14 @@
                     </div>
                 </div>
             </div>
+            <about-scroll-flat 
+                :class="[
+                    {
+                        'hidden':hiddenScroll
+                    }
+                ]"
+            />
         </div>
-
 
         <div class=" flex justify-center mb-4">
             <div class="grid grid-cols-1 md:grid-cols-3 min-w-[80%] max-w-[1352px]">
@@ -35,7 +48,10 @@
                     Technologies
                 </h2>
                 <div class="sm:col-span-2 sm:row-start-2 ">
-                    <about-tech-label-group :label-array="technologiesArray" />
+                    <about-tech-label-group 
+                        :label-array="technologiesArray" 
+                        ref="scrollInstance"
+                    />
                 </div>
 
 
@@ -44,7 +60,8 @@
     </main>
 </template>
 <script setup lang="ts">
-
+const scrollInstance = ref(null);
+const hiddenScroll = ref(false);
 
 const technologiesArray = [
     'HTML & CSS',
@@ -57,5 +74,29 @@ const technologiesArray = [
     'Typescript',
     'Tailwind',
         
-    ]
+]
+
+let prevScrollpos = window.scrollY;
+console.log('y', window.scrollY)
+
+onMounted(async () => {
+    await nextTick();
+    const element = scrollInstance.value;
+    console.log(scrollInstance.value)
+
+    if (!element) return;
+
+    window.onscroll = function () {
+        console.log('y', window.scrollY)
+
+        const currentScrollPos = window.scrollY;
+        if (currentScrollPos > 0) {
+            //element.style.top = "0";
+            hiddenScroll.value = true;
+        } else {
+            hiddenScroll.value = false;
+        }
+    }
+})
+
 </script>
