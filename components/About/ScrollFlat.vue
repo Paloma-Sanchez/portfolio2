@@ -1,5 +1,5 @@
 <template>
-  <div class="w-fit pl-20">
+  <div class="w-fit">
     <div class="flex flex-col items-center">
       <Icon
         :color="isDark?'#E3F0FF':'#1E1E1E'"

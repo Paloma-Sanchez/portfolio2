@@ -34,6 +34,7 @@
             </div>
             
             <about-scroll-flat 
+                class="mb-20 sm:mb-0 mx-auto sm:ml-20"
                 :class="[
                     {
                         'hidden':hiddenScroll
