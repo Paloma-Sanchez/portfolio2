@@ -15,6 +15,7 @@
         @mouseleave="stopVideo(index)"
       >
       <div
+          data-aos="fade-up"
           class="absolute h-64 sm:h-52 lg:h-64 z-20  overflow-hidden  "
           :class="[
             {
@@ -57,7 +58,6 @@
             ></div>
             <NuxtLink :to="project.url" target="_blank">
             <video 
-                class="" 
                 :class="[
                     {
                         'video-scale': mouseActive && index === indexActive,
