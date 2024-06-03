@@ -36,7 +36,7 @@
             />
         </NuxtLink>
         <NuxtLink
-            to="https://www.linkedin.com/"
+            to="https://www.linkedin.com/in/paloma-sanchez-78834510b"
             class="relative z-50 w-8 h-8"
                 :class="thirdLogo"
         >
