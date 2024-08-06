@@ -1,10 +1,9 @@
 <template>
   <Html
-
     :class="[
       {
-        'bg-[#DCECFF]': $colorMode.preference === 'light' && path === '/',
-        'bg-black': $colorMode.preference === 'dark'
+        'bg-[#DCECFF]': $colorMode.value === 'light' && path === '/',
+        'bg-black': $colorMode.value === 'dark'
       }
     ]"
   >
@@ -20,7 +19,7 @@
         const {fullPath} = useRoute();
         return fullPath
     }) 
-    watch(path, () => {
-      console.log('path', path)
-    })
+
 </script>
+
+

@@ -52,4 +52,3 @@ const path = computed(() => {
     return fullPath
 }) 
 </script>
--right-40 sm:-right-20 xl:
